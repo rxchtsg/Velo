@@ -1,4 +1,4 @@
-### Velo
+## Velo
 
 Real time voice translation for people who just want to live their life without a language barrier getting in the way.
 
