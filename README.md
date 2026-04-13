@@ -1,8 +1,8 @@
-**Velo**
+# **Velo**
 Realtime voice translation for getting through daily life without a language barrier slowing you down.
 
 
-**What is this?**
+# **What is this?**
 
 I moved to Germany and found that not speaking fluent German creates constant friction. Calling the doctor, dealing with landlords, sitting through university events that switch language mid sentence. It adds up fast.
 
@@ -11,14 +11,14 @@ Velo is my attempt to reduce that friction. You speak in English, the person on 
 This repo is a proof of concept built for my Technical Documentation module. The architecture is defined and the core pipeline is mapped out, but it is not production ready. Think of it as a working blueprint.
 
 
-**How it works**
+# **How it works**
 
 Speech → Whisper (speech to text) → DeepL (translation) → gTTS (text to speech) → audio output.
 
 The pipeline runs in both directions. The other person speaks German, you hear English. It is three APIs composed into a single low latency flow.
 
 
-**Tech stack**
+# **Tech stack**
 
 | Layer | Tool | Reason |
 |---|---|---|
@@ -29,7 +29,7 @@ The pipeline runs in both directions. The other person speaks German, you hear E
 | Frontend | HTML, CSS, JS | No build step needed for a concept demo |
 
 
-**Project structure**
+# **Project structure**
 
 ```
 ├── app.py              # Flask app and API routes
@@ -44,7 +44,7 @@ The pipeline runs in both directions. The other person speaks German, you hear E
 Each core module has documented TODOs marking exactly what needs to be wired up.
 
 
-**Getting started**
+# **Getting started**
 
 ```bash
 git clone && cd velo
@@ -56,7 +56,7 @@ python app.py
 
 Open http://localhost:5000. You need an OpenAI key for Whisper and a DeepL key for translation.
 
-**Current status**
+# **Current status**
 
 Done:
 - API architecture and endpoint design
@@ -69,7 +69,7 @@ Not yet implemented:
 - WebSocket support for real time streaming
 
 
-**What comes next**
+# **What comes next**
 
 WebSockets — the current HTTP request/response cycle adds latency that would feel noticeable in a real conversation.
 
@@ -82,10 +82,10 @@ Twilio integration — extend to actual phone calls, not just in browser.
 More language pairs — the architecture already supports it, just a matter of adding codes.
 
 
-**Why "Velo"?**
+# **Why "Velo"?**
 
 Velo means fast. That is the point.
 
-**License**
+# **License**
 
 MIT
