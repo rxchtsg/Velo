@@ -5,7 +5,7 @@ Realtime voice translation for getting through daily life without a language bar
 
 I moved to Germany and found that not speaking fluent German creates constant friction. Calling the doctor, dealing with landlords, sitting through university events that switch language mid sentence. It adds up fast.
 
-Velo is my attempt to reduce that friction. You speak in English, the person on the other end hears German, and vice versa, as close to real time as possible.
+Velo is my attempt to reduce that friction. You speak in English, the person on the other end hears German and vice versa (as close to real time as possible.)
 
 This repo is a proof of concept built for my Technical Documentation module. The architecture is defined and the core pipeline is mapped out, but it is not production ready. Think of it as a working blueprint.
 
