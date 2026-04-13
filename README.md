@@ -17,12 +17,6 @@ Speech → Whisper (speech to text) → DeepL (translation) → gTTS (text to sp
 
 The pipeline runs in both directions. The other person speaks German, you hear English. It is three APIs composed into a single low latency flow.
 
-### Architecture diagram
-
-![Velo pipeline diagram](velo_pipeline.png)
-
-Both translation directions share the same three stage pipeline. Whisper handles transcription, DeepL handles translation, and gTTS handles audio synthesis. Only the language direction passed to DeepL changes between the two flows.
-
 ## Tech stack
 
 | Layer | Tool | Reason |
