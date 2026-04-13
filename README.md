@@ -1,24 +1,29 @@
-# **Velo**
+# Velo
 Realtime voice translation for getting through daily life without a language barrier slowing you down.
 
-
-# **What is this?**
+## What is this?
 
 I moved to Germany and found that not speaking fluent German creates constant friction. Calling the doctor, dealing with landlords, sitting through university events that switch language mid sentence. It adds up fast.
 
-Velo is my attempt to reduce that friction. You speak in English, the person on the other end hears German and vice versa, as close to real time as possible.
+Velo is my attempt to reduce that friction. You speak in English, the person on the other end hears German, and vice versa, as close to real time as possible.
 
 This repo is a proof of concept built for my Technical Documentation module. The architecture is defined and the core pipeline is mapped out, but it is not production ready. Think of it as a working blueprint.
 
+**Who this is for:** This README is written for a technical audience, specifically developers or fellow students who want to understand how the project is structured, run it locally or build on top of it. It assumes familiarity with Python and REST APIs but no prior knowledge of the specific tools used.
 
-# **How it works**
+## How it works
 
 Speech → Whisper (speech to text) → DeepL (translation) → gTTS (text to speech) → audio output.
 
 The pipeline runs in both directions. The other person speaks German, you hear English. It is three APIs composed into a single low latency flow.
 
+### Architecture diagram
 
-# **Tech stack**
+![Velo pipeline diagram](velo_pipeline.png)
+
+Both translation directions share the same three stage pipeline. Whisper handles transcription, DeepL handles translation, and gTTS handles audio synthesis. Only the language direction passed to DeepL changes between the two flows.
+
+## Tech stack
 
 | Layer | Tool | Reason |
 |---|---|---|
@@ -28,8 +33,11 @@ The pipeline runs in both directions. The other person speaks German, you hear E
 | Text to speech | gTTS | Free and functional for a demo. Robotic but adequate |
 | Frontend | HTML, CSS, JS | No build step needed for a concept demo |
 
+## Why a README?
 
-# **Project structure**
+A README was the right documentation format for this stage of the project. The codebase is a proof of concept, not a shipped product. A README gives anyone picking this up enough context to understand the intent, run it locally and know exactly where the gaps are, without needing a separate wiki or docs site. If this were a team project or a public API, that would change.
+
+## Project structure
 
 ```
 ├── app.py              # Flask app and API routes
@@ -41,10 +49,9 @@ The pipeline runs in both directions. The other person speaks German, you hear E
 └── requirements.txt    # Dependencies
 ```
 
-Each core module has documented TODOs marking exactly what needs to be wired up.
+Each core module has documented TODOs marking exactly what needs to be wired up. Documenting at this stage rather than waiting until the project is finished means anyone contributing later does not have to reverse engineer intent from incomplete code.
 
-
-# **Getting started**
+## Getting started
 
 ```bash
 git clone && cd velo
@@ -54,38 +61,40 @@ cp .env.example .env  # Add your OpenAI and DeepL API keys (free tiers work)
 python app.py
 ```
 
-Open http://localhost:5000. You need an OpenAI key for Whisper and a DeepL key for translation.
+Open http://localhost:5000. You need an OpenAI key for Whisper and a DeepL key for translation. Both offer free tiers that are sufficient for running this locally.
 
-# **Current status**
+## Current status
 
-Done:
+**Done:**
 - API architecture and endpoint design
 - Scaffolded core modules with clear TODOs
 - Landing page
 
-Not yet implemented:
+**Not yet implemented:**
 - Whisper, DeepL, and gTTS wiring
 - Microphone capture via Web Audio API
-- WebSocket support for real time streaming
+- WebSocket support for real time streaming\
 
+## What comes next
 
-# **What comes next**
+**WebSockets** — the current HTTP request/response cycle adds latency that would feel noticeable in a real conversation.
 
-WebSockets — the current HTTP request/response cycle adds latency that would feel noticeable in a real conversation.
+**Whisper streaming** — avoid waiting for a full sentence before translating.
 
-Whisper streaming — avoid waiting for a full sentence before translating.
+**Better TTS** — ElevenLabs sounds significantly more natural than gTTS.
 
-Better TTS — ElevenLabs sounds significantly more natural than gTTS.
+**Twilio integration** — extend to actual phone calls, not just in browser.
 
-Twilio integration — extend to actual phone calls, not just in browser.
+**More language pairs** — the architecture already supports it, just a matter of adding codes.
 
-More language pairs — the architecture already supports it, just a matter of adding codes.
-
-
-# **Why "Velo"?**
+## Why "Velo"?
 
 Velo means fast. That is the point.
 
-# **License**
+## AI usage statement
+
+Claude (Anthropic) was used to assist with drafting and refining this README. All technical decisions, the project concept and the underlying code architecture are my own. AI was used as an editing tool, not a replacement for understanding.
+
+## License
 
 MIT
