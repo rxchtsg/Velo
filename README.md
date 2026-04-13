@@ -1,11 +1,6 @@
-Here's the rewritten README:
-
----
-
 **Velo**
 Realtime voice translation for getting through daily life without a language barrier slowing you down.
 
----
 
 **What is this?**
 
@@ -15,7 +10,6 @@ Velo is my attempt to reduce that friction. You speak in English, the person on 
 
 This repo is a proof of concept built for my Technical Documentation module. The architecture is defined and the core pipeline is mapped out, but it is not production ready. Think of it as a working blueprint.
 
----
 
 **How it works**
 
@@ -23,7 +17,6 @@ Speech → Whisper (speech to text) → DeepL (translation) → gTTS (text to sp
 
 The pipeline runs in both directions. The other person speaks German, you hear English. It is three APIs composed into a single low latency flow.
 
----
 
 **Tech stack**
 
@@ -35,7 +28,6 @@ The pipeline runs in both directions. The other person speaks German, you hear E
 | Text to speech | gTTS | Free and functional for a demo. Robotic but adequate |
 | Frontend | HTML, CSS, JS | No build step needed for a concept demo |
 
----
 
 **Project structure**
 
@@ -51,7 +43,6 @@ The pipeline runs in both directions. The other person speaks German, you hear E
 
 Each core module has documented TODOs marking exactly what needs to be wired up.
 
----
 
 **Getting started**
 
@@ -65,8 +56,6 @@ python app.py
 
 Open http://localhost:5000. You need an OpenAI key for Whisper and a DeepL key for translation.
 
----
-
 **Current status**
 
 Done:
@@ -79,7 +68,6 @@ Not yet implemented:
 - Microphone capture via Web Audio API
 - WebSocket support for real time streaming
 
----
 
 **What comes next**
 
@@ -93,13 +81,10 @@ Twilio integration — extend to actual phone calls, not just in browser.
 
 More language pairs — the architecture already supports it, just a matter of adding codes.
 
----
 
 **Why "Velo"?**
 
 Velo means fast. That is the point.
-
----
 
 **License**
 
