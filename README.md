@@ -1,7 +1,7 @@
 # Velo
 Realtime voice translation for getting through daily life without a language barrier slowing you down.
 
-## What is this?
+## About this project 
 
 I moved to Germany and found that not speaking fluent German creates constant friction. Calling the doctor, dealing with landlords, sitting through university events that switch language mid sentence. It adds up fast.
 
