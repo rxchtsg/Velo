@@ -6,6 +6,7 @@ Wraps the DeepL API. Can be swapped for Google Translate, LibreTranslate, etc.
 # import deepl
 # import os
 
+# deepl wants uppercase codes ("EN"/"DE"), rest of the app uses lowercase, hence this map
 LANGUAGE_MAP = {
     "en": "EN",
     "de": "DE",
