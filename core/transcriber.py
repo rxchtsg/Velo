@@ -1,5 +1,5 @@
 """
-Speech-to-Text module.
+Speech to Text module.
 Wraps OpenAI Whisper. Swap the implementation here without touching the rest of the app.
 """
 
@@ -27,4 +27,5 @@ def transcribe_audio(audio_file, language: str = "en") -> str:
         )
         return transcript.text
     """
+    # passing the language hint so whisper skips auto-detection, faster on short clips
     raise NotImplementedError("Whisper integration pending.")
