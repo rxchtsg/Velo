@@ -28,6 +28,18 @@ This repository currently includes the following documentation:
 
 The main project documentation. It explains the project idea, intended audience, setup steps, architecture, current status and future development plans.
 
+`docs/architecture.md`
+
+Conceptual documentation covering the reasoning behind the system design, not just what it does.
+
+`docs/tutorial.md`
+
+A step by step guide for getting the project running locally.
+
+`CONTRIBUTING.md`
+
+A guide for anyone extending the project, covering where to find open work and what is expected of a change.
+
 `.env.example`
 
 This file shows which environment variables are expected for local development without exposing private API keys.
@@ -50,16 +62,10 @@ The planned pipeline follows this structure:
 
 ```mermaid
 flowchart LR
-    A[User speaks] --> B[Speech to text using Whisper]
-    B --> C[Translation using DeepL]
-    C --> D[Text to speech using gTTS]
+    A[User speaks] --> B[Speech to text]
+    B --> C[Translation]
+    C --> D[Text to speech]
     D --> E[Translated audio output]
-
-    E --> F[Other person responds]
-    F --> G[Speech to text using Whisper]
-    G --> H[Translation using DeepL]
-    H --> I[Text to speech using gTTS]
-    I --> J[Audio output for original user]
 ```
 
 The pipeline is intended to work in both directions.
@@ -147,7 +153,7 @@ A simple frontend was chosen because the current prototype does not need a build
 │   └── synthesizer.py  # Text to speech logic
 ├── docs/
 │   ├── architecture.md # Conceptual system documentation
-│   └── api.md          # API documentation
+│   └── tutorial.md     # Step by step setup guide
 ├── index.html          # Landing page and prototype UI
 ├── requirements.txt    # Python dependencies
 ├── .env.example        # Example environment variables
