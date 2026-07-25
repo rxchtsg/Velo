@@ -31,4 +31,5 @@ def synthesize_speech(text: str, language: str = "de") -> str:
         tts.save(filepath)
         return f"/static/audio/{filename}"
     """
+    # uuid4 avoids filename clashes if two people translate at the same time
     raise NotImplementedError("gTTS integration pending.")
