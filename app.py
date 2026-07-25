@@ -37,6 +37,7 @@ def translate():
         })
 
     except Exception as e:
+        # too broad right now, want to split by stage once whisper/deepl/gtts are actually connected
         return jsonify({"error": str(e)}), 500
 
 
